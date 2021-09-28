@@ -1,0 +1,63 @@
+@import "../../gloabal.scss";
+
+.nextEvent {
+  background-color: $bg;
+  position: relative;
+  display: flex;
+  flex: 1;
+  img {
+    flex: 1;
+    object-fit: cover;
+    filter: blur(3.5px);
+  }
+  .player {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    h2 {
+      margin-bottom: 100px;
+      font-size: 25px;
+      color: $text;
+    }
+  }
+  .countDownContainer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .countDown {
+      font-size: 100px;
+      color: $text;
+      font-weight: 900;
+    }
+    h1 {
+      font-size: 50px;
+      color: $red;
+    }
+    h2 {
+      font-size: 60px;
+      color: $text;
+    }
+
+    a {
+      margin-top: 15px;
+      background-color: $lightpurple;
+      padding: 20px;
+      color: $text;
+      border-radius: 10px;
+      transition: background-color 0.5s ease;
+      text-decoration: none;
+      &:hover {
+        background-color: $lightred;
+      }
+    }
+  }
+}

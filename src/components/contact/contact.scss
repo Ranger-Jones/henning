@@ -1,0 +1,103 @@
+@import "../../gloabal.scss";
+.contact {
+  background-color: $bg;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .headingContainer {
+    margin-top: 50px;
+    h1 {
+      font-size: 50px;
+      color: $text;
+    }
+  }
+  form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .buttonContainer {
+      margin-top: 50px;
+      button {
+        padding: 25px;
+        background-color: $lightpurple;
+        transition: background-color 0.5s;
+        border-radius: 5px;
+        border-color: $lightpurple;
+        border-width: 0;
+        cursor: pointer;
+        p {
+          color: $text;
+          font-weight: bold;
+          font-size: 24px;
+        }
+        &:hover {
+          background-color: $lightred;
+        }
+      }
+    }
+    .formGroup {
+      position: relative;
+      padding: 15px 0 0;
+      margin-top: 20px;
+      width: 50%;
+    }
+
+    .formField {
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid $lightpurple;
+      outline: 0;
+      font-size: 1.3rem;
+      color: $text;
+      padding: 7px 0;
+      background: transparent;
+      transition: border-color 0.2s;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:placeholder-shown ~ .formLabel {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+      }
+    }
+
+    .formLabel {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $lightpurple;
+    }
+
+    .formField:focus {
+      ~ .formLabel {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $lightred;
+        font-weight: 700;
+      }
+      padding-bottom: 6px;
+      font-weight: 700;
+      border-width: 3px;
+      border-color: $lightred;
+      border-image-slice: 1;
+    }
+    /* reset input */
+    .formField {
+      &:required,
+      &:invalid {
+        box-shadow: none;
+      }
+    }
+  }
+}

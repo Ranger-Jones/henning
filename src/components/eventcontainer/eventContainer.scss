@@ -1,0 +1,68 @@
+@import "../../gloabal.scss";
+.eventContainer {
+  width: 100%;
+  height: 200px;
+  background-color: $lightpurple;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  border-radius: 10px;
+  overflow-y: hidden;
+  margin: 10px 0;
+  border-width: 0;
+  &:hover {
+    .eventImage {
+      img {
+        filter: blur(2px);
+      }
+    }
+    .readMore {
+      opacity: 1;
+    }
+  }
+  .eventImage {
+    overflow-y: hidden;
+    width: 47%;
+    border-radius: 5px;
+    cursor: pointer;
+    img {
+      transition: all 0.5s ease;
+      width: 100%;
+    }
+  }
+  .eventLabelContainer {
+    width: 50%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    justify-content: center;
+    overflow-y: hidden;
+    h1 {
+      color: $text;
+      font-size: 50px;
+    }
+    h3 {
+      color: $lightred;
+      font-size: 40px;
+    }
+  }
+  .readMore {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    h2 {
+      color: $text;
+      font-weight: 700;
+      font-size: 28px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      &:hover {
+        font-weight: 900;
+      }
+    }
+  }
+}

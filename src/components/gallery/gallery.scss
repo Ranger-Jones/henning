@@ -1,0 +1,54 @@
+@import "../../gloabal.scss";
+
+.gallery {
+  background-color: $bg;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  .headingContainer {
+    margin-top: 50px;
+    overflow-y: hidden;
+    height: 17rem;
+    h1 {
+      color: $text;
+      overflow-y: hidden;
+      padding: 10px;
+      font-size: 50px;
+    }
+  }
+  .imgList {
+    margin-left: 50px;
+    width: 100%;
+    overflow-y: visible;
+
+    .row {
+      width: 100%;
+      margin: 15px 0;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  .down {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    img {
+      width: 50px;
+      bottom: 0;
+      animation: arrowBlink 2s infinite;
+      filter: invert(100%);
+      transition: width 0.5s;
+
+      &:hover {
+        width: 60px;
+      }
+    }
+    @keyframes arrowBlink {
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}

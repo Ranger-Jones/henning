@@ -1,0 +1,23 @@
+@import "../../gloabal.scss";
+.player {
+  z-index: 3;
+  flex: 1;
+  position: relative;
+  .icon {
+    transition: all 0.5s ease;
+    color: $text;
+    cursor: pointer;
+  }
+  .musicInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+    background-color: $lightpurple;
+    h1 {
+      font-size: 20px;
+      color: $text;
+    }
+  }
+}

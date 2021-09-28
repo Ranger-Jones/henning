@@ -1,0 +1,40 @@
+@import "../../gloabal.scss";
+
+.imgContainer {
+  height: 18.5rem;
+  width: 18.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow-y: hidden;
+  margin: 0 10px;
+
+  .label {
+    position: absolute;
+    left: 25%;
+    z-index: 1;
+    top: 45%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    h1 {
+      color: $text;
+      font-size: 30px;
+      font-weight: 900;
+    }
+  }
+  img {
+    object-fit: cover;
+    height: 18.5rem;
+    width: 18.5rem;
+
+    border-radius: 10px;
+    transition: all 0.5s ease;
+  }
+  &:hover {
+    img {
+      filter: blur(2px);
+    }
+    .label {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import "../../gloabal.scss";
+.videoContainer {
+  position: relative;
+  .video {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+  }
+}
+
+.tracks {
+  background-color: $bg;
+  color: $text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: hidden;
+  h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: inherit;
+  }
+
+  h2 {
+    font-size: 20px;
+    color: $lightred;
+    margin-bottom: 10px;
+  }
+  .tracklist {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    width: 95%;
+    .item {
+      margin: 10px 10px;
+      width: 22%;
+      border-radius: 10px;
+
+      div {
+        width: 100%;
+        transition: all 0.5s ease;
+        position: relative;
+        .socialContainer {
+          position: absolute;
+          display: flex;
+          top: 35%;
+          left: 15px;
+          transition: all 0.5s ease;
+          width: 100%;
+          opacity: 0;
+          z-index: 3;
+        }
+        &:hover {
+          .imgContainer {
+            img {
+              filter: blur(2px);
+            }
+          }
+        }
+        .iconContainer {
+          cursor: pointer;
+          width: 25%;
+          position: absolute;
+          left: 15px;
+          bottom: 15px;
+          z-index: 3;
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+        .imgContainer {
+          img {
+            width: 100%;
+            transition: all 0.5s ease;
+          }
+          &:hover {
+            filter: blur(2px);
+          }
+        }
+      }
+      &:hover {
+        .socialContainer {
+          opacity: 1;
+        }
+        .iconContainer {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.socialIcon {
+  img {
+    width: 70%;
+    height: 90%;
+    transition: filter 1s ease;
+    cursor: pointer;
+    &:hover {
+      filter: invert(1);
+    }
+  }
+}

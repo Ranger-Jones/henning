@@ -1,0 +1,9 @@
+@import "../../gloabal.scss";
+
+.testfield {
+  background-color: $bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
