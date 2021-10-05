@@ -1,0 +1,18 @@
+@import "../../../gloabal.scss";
+
+.textField {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $lightpurple;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $text;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.4s;
+}
+
+.textField:focus {
+  border-bottom: 2px solid $red;
+}

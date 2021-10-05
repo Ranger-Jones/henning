@@ -5,11 +5,9 @@ import Topbar from "../../components/topbar/Topbar";
 import Intro from "../../components/intro/Intro";
 import Contact from "../../components/contact/Contact";
 import Menu from "../../components/menu/Menu";
-import AboutMe from "../../components/aboutme/AboutMe";
 import Tracks from "../../components/tracks/Tracks";
 import Events from "../../components/events/Events";
 import Gallery from "../../components/gallery/Gallery";
-import Jakob from "../../components/jakob/Jakob";
 import Testfield from "../../components/testfield/Testfield";
 import CloseIcon from "@material-ui/icons/Close";
 import NextEvent from "../../components/nextevent/NextEvent";
@@ -24,6 +22,7 @@ function Main() {
   const [isPlayingWall, setIsPlayingWall] = useState(false);
   const [isPlayingEvent, setIsPlayingEvent] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const currentEventTrack = "Lemonade";
 
@@ -57,45 +56,48 @@ function Main() {
     }
   }, [currentMusic]);
   return (
-    <div className="app">
-      <div className="sections">
-        <Intro />
-        <AboutMe />
-        <Tracks
-          setCurrentMusic={setCurrentMusic}
-          currentMusic={currentMusic}
-          isPlayingAllein={isPlayingAllein}
-          isPlayingMotel={isPlayingMotel}
-          isPlayingBeThere={isPlayingBeThere}
-          isPlayingWall={isPlayingWall}
-          setProgress={setProgress}
-        />
-        <NextEvent
-          setCurrentMusic={setCurrentMusic}
-          setProgress={setProgress}
-          isPlayingEvent={isPlayingEvent}
-        />
-        <Events />
-        <Gallery />
-        <Contact />
-        <Testfield />
-      </div>
-      <div className={"musicInfo " + (currentMusic !== "" && "active")}>
-        <div className="top">
-          <h1>Current song:</h1>
-          <div
-            className="iconContainer"
-            onClick={() => {
-              setCurrentMusic("");
-            }}
-          >
-            <CloseIcon className="icon" />
-          </div>
+    <>
+      <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div className="app">
+        <div className="sections">
+          <Intro />
+          <Tracks
+            setCurrentMusic={setCurrentMusic}
+            currentMusic={currentMusic}
+            isPlayingAllein={isPlayingAllein}
+            isPlayingMotel={isPlayingMotel}
+            isPlayingBeThere={isPlayingBeThere}
+            isPlayingWall={isPlayingWall}
+            setProgress={setProgress}
+          />
+          <NextEvent
+            setCurrentMusic={setCurrentMusic}
+            setProgress={setProgress}
+            isPlayingEvent={isPlayingEvent}
+          />
+          <Events />
+          <Gallery />
+          <Contact />
+          <Testfield />
         </div>
-        <h2>{currentMusic}</h2>
-        <LinearProgress variant="determinate" value={progress} />
+        <div className={"musicInfo " + (currentMusic !== "" && "active")}>
+          <div className="top">
+            <h1>Current song:</h1>
+            <div
+              className="iconContainer"
+              onClick={() => {
+                setCurrentMusic("");
+              }}
+            >
+              <CloseIcon className="icon" />
+            </div>
+          </div>
+          <h2>{currentMusic}</h2>
+          <LinearProgress variant="determinate" value={progress} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

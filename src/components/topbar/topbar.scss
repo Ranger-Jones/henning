@@ -44,6 +44,23 @@
       font-weight: 500;
     }
   }
+  .itemContainerLast {
+    display: flex;
+    margin-left: 30px;
+
+    &.clickable {
+      cursor: pointer;
+    }
+    .icon {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+
+    .span {
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
   .right {
     .hamburger {
       display: flex;

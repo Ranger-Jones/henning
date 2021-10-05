@@ -6,6 +6,21 @@
   flex-direction: row;
   background-color: $bg;
   color: $text;
+  .scrollContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .infoItems {
+    width: 500px;
+    height: 100%;
+  }
+
+  .wrapperContainer {
+    width: 100%;
+    height: 100%;
+  }
+
   .headingContainer {
     margin-top: 40px;
     margin-bottom: 15px;

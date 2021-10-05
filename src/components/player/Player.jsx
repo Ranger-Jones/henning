@@ -47,8 +47,6 @@ const Player = ({
     const interval = setInterval(() => {
       currentTime = progress;
       setProgress(currentTime);
-
-      console.log("Current Time outside func: " + currentTime);
     }, 1000);
     return () => clearInterval(interval);
   }, []);

@@ -1,7 +1,9 @@
 import "./topbar.scss";
-import { Person, Mail, Instagram } from "@material-ui/icons";
+import { Person, Mail, Instagram, PersonOutline } from "@material-ui/icons";
+import { useSelector } from "react-redux";
 
 export default function Topbar({ menuOpen, setMenuOpen }) {
+  const currentUser = useSelector((state) => state.auth.currentUser);
   return (
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="wrapper">
@@ -26,6 +28,10 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
           >
             <Instagram className="icon" />
             <span>henning_dittrich_official</span>
+          </div>
+          <div className="itemContainerLast">
+            <PersonOutline className="icon" />
+            <span>{currentUser !== null && currentUser.email}</span>
           </div>
         </div>
         <div className="right">

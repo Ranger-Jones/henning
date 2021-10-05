@@ -55,7 +55,7 @@ export default function Intro() {
           </div>
           */}
           <div className="wrapper">
-            <h2>DJ - Musiker - Beatboxer - Eventplaner</h2>
+            <h2>DJ - Musiker - Eventplaner</h2>
             <h1>Henning Dittrich</h1>
             <h3>
               Best DJ in <span ref={textRef}></span>
