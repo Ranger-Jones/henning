@@ -10,16 +10,6 @@ import { applyMiddleware, createStore } from "redux";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBOSStbFqkGgz6cFNnCmCvyFc6Cm1eNlrk",
-  authDomain: "henning-dittrich.firebaseapp.com",
-  projectId: "henning-dittrich",
-  storageBucket: "henning-dittrich.appspot.com",
-  messagingSenderId: "262287162776",
-  appId: "1:262287162776:web:718a60016bcabf3816bfed",
-  measurementId: "G-QC3BXL7SLM",
-};
-
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 } else {
